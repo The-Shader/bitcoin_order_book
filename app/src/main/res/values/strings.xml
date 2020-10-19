@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BitcoinOrderBook</string>
+    <string name="btc_usd_price">BTC/USD Price: %1$.1f$</string>
+    <string name="price_change_up">Change: +%1$.2f%%</string>
+    <string name="price_change_down">Change: -%1$.2f%%</string>
+    <string name="ticker_volume">Volume: %1$.1fM</string>
+    <string name="ticker_price_low">Low:%1$.1f$</string>
+    <string name="ticker_price_high">Low: %1$.1f$</string>
+    <string name="bids_label">Bids:</string>
+    <string name="asks_label">Asks:</string>
+</resources>

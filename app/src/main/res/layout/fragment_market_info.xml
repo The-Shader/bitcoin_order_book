@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".ui.HomeActivity">
+
+    <TextView
+        android:id="@+id/ticker_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btc_usd_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        />
+
+    <TextView
+        android:id="@+id/ticker_price_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/price_change_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticker_price"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/ticker_volume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ticker_volume"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticker_price_change"
+        android:layout_marginTop="@dimen/default_margin_large"
+        android:textAlignment="viewStart"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/ticker_price_low"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ticker_price_low"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticker_volume"
+        android:layout_marginTop="@dimen/default_margin_medium"
+        android:textAlignment="viewStart"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/ticker_price_high"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ticker_price_high"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticker_price_low"
+        android:layout_marginTop="@dimen/default_margin_medium"
+        android:textAlignment="viewStart"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        android:indeterminateTint="@color/colorDarkPurple"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+    <TextView
+        android:id="@+id/order_book_bid_label"
+        android:layout_width="@dimen/fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bids_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/ticker_price_high"
+        android:layout_marginTop="@dimen/default_margin_big"
+        android:textAlignment="viewStart"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/order_book_ask_label"
+        android:layout_width="@dimen/fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/asks_label"
+        app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticker_price_high"
+        android:layout_marginStart="@dimen/default_margin_small"
+        android:layout_marginTop="@dimen/default_margin_big"
+        android:textAlignment="viewStart"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_of_bids"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        android:layout_width="@dimen/fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/order_book_bid_label"
+        android:layout_marginTop="@dimen/default_margin_big"
+        android:layout_marginEnd="@dimen/default_margin_small"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_of_asks"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        android:layout_width="@dimen/fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_book_ask_label"
+        android:layout_marginTop="@dimen/default_margin_big"
+        android:layout_marginStart="@dimen/default_margin_small"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
