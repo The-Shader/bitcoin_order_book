@@ -3,6 +3,7 @@
 ## Project Notes
 
 The following features and techniques have been implemented/used:
+* `GestureDetectorCompat` for refreshing data upon swipe-down gesture
 * Network caching with `OkHttp`
 * `Retrofit` for Rest API
 * MVI architecture is used in the feature modules for separating responsibilities, utilising [Orbit2](https://github.com/babylonhealth/orbit-mvi)
@@ -13,6 +14,8 @@ The following features and techniques have been implemented/used:
 * Using `AndroidX` libraries
 
 Missing/can be improved:
+* Adding database (for example with `Room`) for offline mode
+* Auto-update within a fixed time period
 * Upgrading to `RxJava3`
 * Better state handling with init-state and timeouts on failing to load
 * Start using styles and themes
